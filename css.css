@@ -1,0 +1,171 @@
+* {
+    font-family: 'system-ui', -apple-system, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Prevents padding from adding to width */
+}
+
+body {
+    background-color: #000; /* Fallback color */
+    overflow-x: hidden;    /* Prevents accidental side-scrolling */
+}
+.title {
+    font-size: 3rem;
+    color: #6d28d9;
+    text-align: center;
+    margin-top: 20vh; /* Pushes the title down for better visibility */
+} 
+/* The Background Video */
+#myVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Centering the Content */
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    
+    /* Flexbox Magic for vertical and horizontal centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
+    min-height: 100vh;       /* Takes full screen height */
+    padding: 1rem;
+}
+
+.bar {
+    padding: 10px;
+    font-size: clamp(2rem, 8vw, 4rem); /* Responsive font size */
+    color: #bdb7b7;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows links to wrap on small screens */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #b9b4b4;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+/* Hover effects */
+.navbar a:hover {
+    transform: scale(1.1);
+    color: #6960EC;
+}
+
+/* Line animation */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #6960EC;
+    transition: 0.4s;
+    box-shadow: 0 2px 5px rgba(105, 96, 236, 0.5);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+/* ... existing styles ... */
+
+/* 1. Add a transition to the video so the blur is smooth */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: filter 0.5s ease; /* Smooth transition for the blur */
+}
+
+/* 2. Target the video when the content area is hovered */
+.content:hover ~ #myVideo,
+body:has(.navbar a:hover) #myVideo {
+    filter: blur(8px) brightness(0.7); /* Dims and blurs the background */
+}
+
+/* 3. Optional: Add a subtle glow to the text when blurred */
+.content:hover .bar {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+/* ... existing styles ... */
+
+/* 1. Add a transition to the video so the blur is smooth */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: filter 0.5s ease; /* Smooth transition for the blur */
+}
+
+/* 2. Target the video when the content area is hovered */
+.content:hover ~ #myVideo,
+body:has(.navbar a:hover) #myVideo {
+    filter: blur(8px) brightness(0.7); /* Dims and blurs the background */
+}
+
+/* 3. Optional: Add a subtle glow to the text when blurred */
+.content:hover .bar {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+.wallpaper{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  border-radius:8px;
+  padding:10px;
+  text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card img{
+  width:100%;
+  border-radius:6px;
+}
+@media (max-width:1000px){
+  .wallpaper{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width:600px){
+  .wallpaper{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

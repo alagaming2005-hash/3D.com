@@ -1,0 +1,81 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+#icon{
+    font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  gap: 20px;
+  color: #111111;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+}
+#icon1{
+   
+  
+  color: #111111;
+  margin-right: 2px;
+  display: flex;
+
+}
+#icon1:hover{
+  color:#6960EC;
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+#icon:hover{
+  color:#6960EC;
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+.wallpaper{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+.card{
+  background: -moz-linear-gradient(  #e92d98, #da339f);
+  border-radius:8px;
+  padding:10px;
+  text-align:center;
+  box-shadow:0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.card img{
+  width:100%;
+  border-radius:6px;
+}
+@media (max-width:1000px){
+  .wallpaper{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width:600px){
+  .wallpaper{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+button{
+  background-color: #007BFF;
+  color: white;
+  
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover{
+  background-color: #0056b3;
+}
+.card:hover{
+scale: 1.07;
+transition: transform 0.3s ease;
+
+}
